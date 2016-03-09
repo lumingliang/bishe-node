@@ -9,6 +9,7 @@
   "dependencies": {
 	  "q":"latest",
 	  "ubidots":"latest",
-      "log":"latest"
+      "log":"latest",
+      "socket.io-client":"latest"
   }
 }

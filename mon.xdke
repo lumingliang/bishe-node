@@ -1,0 +1,144 @@
+{
+  "project": {
+    "projectSettingsVersion": "2.0.0",
+    "initialAutoPluginCount": 0,
+    "currentBuildConfiguration": "Android",
+    "projectFiles": {},
+    "projectDirectories": {}
+  },
+  "iot-tab": {
+    "fileStatus": {
+      "actuator.js": {
+        "previousModTime": 1449463408882,
+        "modified": 1449463408882,
+        "seen": true,
+        "name": "actuator.js"
+      },
+      "display.js": {
+        "previousModTime": 1449451982592,
+        "modified": 1449451982592,
+        "seen": true,
+        "name": "display.js"
+      },
+      "lcd.js": {
+        "previousModTime": 1450452645360,
+        "modified": 1450452645360,
+        "seen": true,
+        "name": "lcd.js"
+      },
+      "main.js": {
+        "previousModTime": 1457497049997,
+        "modified": 1457497049997,
+        "seen": true,
+        "name": "main.js"
+      },
+      "mon.xdk": {
+        "previousModTime": 1449370538465,
+        "modified": 1449370538465,
+        "seen": true,
+        "name": "mon.xdk"
+      },
+      "mon.xdke": {
+        "previousModTime": 1457490867547,
+        "modified": 1457490867547,
+        "seen": true,
+        "name": "mon.xdke"
+      },
+      "package.json": {
+        "previousModTime": 1457166021360,
+        "modified": 1457166021360,
+        "seen": true,
+        "name": "package.json"
+      },
+      "README.md": {
+        "previousModTime": 1457160686028,
+        "modified": 1457160686028,
+        "seen": true,
+        "name": "README.md"
+      },
+      "sensor.js": {
+        "previousModTime": 1449983603989,
+        "modified": 1449983603989,
+        "seen": true,
+        "name": "sensor.js"
+      },
+      "servo.js": {
+        "previousModTime": 1449746698907,
+        "modified": 1449746698907,
+        "seen": true,
+        "name": "servo.js"
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1449370538437,
+        "modified": 1449370538437,
+        "seen": true,
+        "name": "xdk/project-info.json"
+      },
+      "sht20.js": {
+        "previousModTime": 1451702446378,
+        "modified": 1451702446378,
+        "seen": true,
+        "name": "sht20.js"
+      },
+      "tRh.js": {
+        "previousModTime": 1449974439142,
+        "modified": 1449974439142,
+        "seen": true,
+        "name": "tRh.js"
+      },
+      "b.js": {
+        "previousModTime": 1450452565836,
+        "modified": 1450452565836,
+        "seen": true,
+        "name": "b.js"
+      },
+      "date-patch.js": {
+        "previousModTime": 1457490865067,
+        "modified": 1457490865067,
+        "seen": true,
+        "name": "date-patch.js"
+      },
+      ".16-03-07.xlsx": {
+        "previousModTime": 1457351200914,
+        "modified": 1457351200914,
+        "seen": true,
+        "name": ".16-03-07.xlsx"
+      },
+      "16-03-07.xlsx": {
+        "previousModTime": 1457352745102,
+        "modified": 1457352745102,
+        "seen": true,
+        "name": "16-03-07.xlsx"
+      },
+      "createExcel.py": {
+        "previousModTime": 1457359335826,
+        "modified": 1457359335826,
+        "seen": true,
+        "name": "createExcel.py"
+      },
+      "memery.py": {
+        "previousModTime": 1457351453476,
+        "modified": 1457351453476,
+        "seen": true,
+        "name": "memery.py"
+      },
+      "path.py": {
+        "previousModTime": 1457349299105,
+        "modified": 1457349299105,
+        "seen": true,
+        "name": "path.py"
+      },
+      "root@192.168.1.101": {
+        "previousModTime": 1457352833653,
+        "modified": 1457352833653,
+        "seen": true,
+        "name": "root@192.168.1.101"
+      }
+    },
+    "boardFileStatus": {
+      "main.js": {
+        "previousModTime": 1457497054100
+      }
+    }
+  }
+}

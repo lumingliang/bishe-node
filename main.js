@@ -5,6 +5,8 @@
 // //Type Node.js Here :)
 
 
+
+require('./date-patch');
 mraa = require('mraa');
 var sht20 = require('./sht20');
 console.log(sht20);
@@ -38,7 +40,7 @@ actuator3 = actuator({port:4,relySensor:[3]});
 actuator4 = actuator({port:6,relySensor:[4]});
 actuator5 = actuator({port:7,relySensor:[5]});
 
-//actuator1.start();
+actuator1.start();
 //actuator2.start();
 //actuator3.start();
 // actuator4.start();
@@ -72,20 +74,20 @@ servo1.start();
 
 
 
-var fs = require('fs')
-  , Log = require('log')
-  , log = new Log('debug', fs.createWriteStream('/media/sdcard/edisonData/data.log'));
+// var fs = require('fs')
+  // , Log = require('log')
+  // , log = new Log('debug', fs.createWriteStream('/media/sdcard/edisonData/data.log'));
 
 
-function localRecord() {
-    var str = JSON.stringify(data);
+// function localRecord() {
+    // var str = JSON.stringify(data);
 
-    log.info(str);
-    console.log('save suceess');
-}
-//setTimeout(localRecord, 5000);
+    // log.info(str);
+    // console.log('save suceess');
+// }
+// //setTimeout(localRecord, 5000);
 
-setInterval(localRecord, 5000);
+// setInterval(localRecord, 5000);
 
 
 
@@ -119,6 +121,76 @@ client.auth(function () {
 	setInterval(saveData,5000);
 
 });
+
+
+// 每个sensor自带了当前值，每个执行器自带了控制状态
+
+
+// 向node发送更新
+var ip2 = 'http://192.168.1.106:3000';
+var ip1 = 'http://192.168.0.102:3000';
+var sockect = require('socket.io-client')(ip1);
+
+sockect.on('connect', function() {
+	console.log('i have connect to the server');
+});
+
+
+// sockect.emit('addEdison', {user_id: 'user_id:27'});
+
+// var data = {user_id: 'user_id:27' , data: {'sensor_id:4': {value: 15, date: t()}, 'sensor_id:16': {value: 343, date: t()}, 'sensor_id:14': {value: 344, date: t()} }};
+
+// sockect.emit('updateData', data);
+
+function addEdison() {
+	sockect.emit('addEdison', {user_id: 'user_id:27'});
+}
+
+function updateData() {
+	var date = new Date().getD(0);
+	var data = { 
+		user_id: 'user_id:27',
+		data: { 
+			'sensor_id:44': {value: sensor5.rawValue, date: date },
+			'sensor_id:45': {value: sensor4.rawValue, date: date},
+			'sensor_id:46': {value: sensor1.rawValue, date: date},
+			'sensor_id:47': { value: sensor0.rawValue, date: date },
+			'sensor_id:48': { value: sensor2.rawValue, date: date },
+			'sensor_id:49': { value: sensor3.rawValue, date: date }
+
+		}
+	};
+	
+	sockect.emit('updateData', data);
+}
+
+setTimeout(addEdison, 2000);
+
+setInterval(updateData, 6000);
+
+// {0:weight,1:light,2:temperatrue,3:humidity,4:NH3,5:co2 }
+
+
+
+var exec = require('child_process').exec;
+function saveExcel() {
+
+	var argData = ' ' + sensor5.rawValue + ' ' + sensor1.rawValue + ' ' + sensor4.rawValue + ' ' + sensor2.rawValue + ' ' + sensor3.rawValue + ' ' + sensor0.rawValue;
+	exec('python ~/iot/createExcel.py' + argData, function(err) {
+		if(err) {
+			console.info('exe python err:' + err);
+		}
+	});
+}
+
+var saveDataHandle = setInterval(saveExcel, 10000);
+
+// function newSave() {
+	// clearInterval(saveDataHandle);
+	// setInterval
+// }
+
+// setTimeout(newSave, 60*1000*60*24)
 
 
 
