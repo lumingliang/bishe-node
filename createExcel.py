@@ -14,10 +14,16 @@ import sys
 #sheet.save_as("data.xlsx")
 
 def doCreate(path):
-    a = []
-    sheet = pyexcel.get_sheet(array=a)
-    sheet.row += ["time/val", "co2", "light", "NH3", "temp", "humidity", "voice"]
+    #  a = []
+    #  sheet = pyexcel.get_sheet(array=a)
+    #  sheet.row += ["time/val", "co2", "light", "NH3", "temp", "humidity", "voice"]
+    #  sheet.save_as(path)
+    # 下面是新的创建方法2016.4.23
+
+    array = ["time/val", "co2", "light", "NH3", "temp", "humidity", "voice"]
+    sheet = pyexcel.Sheet(array)
     sheet.save_as(path)
+
 
 def addExcel(path, nowtime):
     sheet = pe.get_sheet(file_name = path)
@@ -32,8 +38,8 @@ def addExcel(path, nowtime):
 def createExcel():
     today = datetime.now()
     #print(today.strftime("%y-%m-%d"))
-    prefix = "/media/sdcard"
-    #prefix = ""
+    #prefix = "/media/sdcard"
+    prefix = "/f/"
     excelName = prefix + today.strftime("%y-%m-%d") + ".xlsx"
     nowtime = today.strftime("%X")
     print(excelName)

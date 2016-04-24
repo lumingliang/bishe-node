@@ -52,7 +52,8 @@ module.exports = function(option) {
 			that.rawValue = that.instance.readFloat();
 		},
 		computeValue: function() {
-			//j
+			// 如果设置了计算value表达式就使用它(compute value for every instance)
+			//option.computeValue?option.computeValue();
 		} ,
 		start: function() {
 			if(!that.i2c) {
